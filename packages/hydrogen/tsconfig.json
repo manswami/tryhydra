@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src", "dev.env.d.ts"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["node", "vite/client", "jest", "@testing-library/jest-dom"],
+    "paths": {
+      "@shopify/hydrogen": ["./src"],
+      "~/mini-oxygen/*": ["../mini-oxygen/src/*"]
+    }
+  },
+  "exclude": ["src/cart/createCartHandler.example.ts"]
+}

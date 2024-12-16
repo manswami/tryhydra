@@ -1,0 +1,26 @@
+{
+  "name": "@shopify/create-hydrogen",
+  "publishConfig": {
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
+  },
+  "license": "MIT",
+  "version": "5.0.13",
+  "type": "module",
+  "scripts": {
+    "build": "tsup --clean",
+    "dev": "tsup --watch src --watch ../cli/src",
+    "test": "vitest run --test-timeout=60000",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ast-grep/napi": "0.11.0"
+  },
+  "devDependencies": {
+    "tempy": "3.0.0"
+  },
+  "bin": "dist/create-app.js",
+  "files": [
+    "dist"
+  ]
+}

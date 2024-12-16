@@ -1,0 +1,85 @@
+{
+  "name": "@shopify/mini-oxygen",
+  "publishConfig": {
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
+  },
+  "version": "3.1.0",
+  "license": "MIT",
+  "type": "module",
+  "description": "Development assistant for custom Shopify Oxygen hosted storefronts",
+  "main": "./dist/worker/index.js",
+  "module": "dist/worker/index.js",
+  "types": "./dist/worker/index.d.ts",
+  "sideEffects": false,
+  "repository": "https://github.com/Shopify/hydrogen.git",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build",
+    "test": "NODE_OPTIONS=--experimental-vm-modules vitest run --test-timeout=60000"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/worker/index.d.ts",
+      "default": "./dist/worker/index.js"
+    },
+    "./node": {
+      "types": "./dist/node/index.d.ts",
+      "default": "./dist/node/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite/plugin.d.ts",
+      "default": "./dist/vite/plugin.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@miniflare/cache": "^2.14.2",
+    "@miniflare/core": "^2.14.2",
+    "@miniflare/queues": "^2.14.2",
+    "@miniflare/runner-vm": "^2.14.2",
+    "@miniflare/shared": "^2.14.2",
+    "@miniflare/storage-memory": "^2.14.2",
+    "@miniflare/web-sockets": "^2.14.2",
+    "body-parser": "1.20.2",
+    "connect": "^3.7.0",
+    "get-port": "^7.0.0",
+    "miniflare": "^3.20240925.0",
+    "mrmime": "1.0.1",
+    "source-map": "^0.7.4",
+    "source-map-support": "^0.5.21",
+    "stack-trace": "^1.0.0-pre2",
+    "undici": "^6.11.1",
+    "ws": "^8.17.1"
+  },
+  "devDependencies": {
+    "@shopify/oxygen-workers-types": "^4.1.2",
+    "@types/body-parser": "1.19.3",
+    "@types/connect": "^3.4.35",
+    "@types/eventsource": "^1.1.10",
+    "@types/node": "^18.7.0",
+    "@types/source-map-support": "^0.5.10",
+    "@types/stack-trace": "^0.0.33",
+    "@types/ws": "^8.5.3",
+    "devtools-protocol": "^0.0.1177611",
+    "eventsource": "^2.0.2",
+    "tempy": "3.0.0",
+    "vitest": "^1.0.4"
+  },
+  "peerDependencies": {
+    "vite": "^5.1.0"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  }
+}

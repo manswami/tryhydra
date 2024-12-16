@@ -1,0 +1,16 @@
+{
+  "extends": "../../templates/skeleton/tsconfig.json",
+  "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.tsx"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./*", "../../templates/skeleton/*"],
+      "~/*": ["app/*", "../../templates/skeleton/app/*"]
+    },
+    /***********************************************/
+    /**********  EXAMPLE UPDATE STARTS  ************/
+    "types": ["@shopify/oxygen-workers-types", "@types/gtag.js"]
+    /**********   EXAMPLE UPDATE END   ************/
+    /***********************************************/
+  }
+}
